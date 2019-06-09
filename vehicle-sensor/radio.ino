@@ -3,9 +3,9 @@
 constexpr uint8_t radioRxPin = 11;
 constexpr uint8_t radioTxPin = 10;
 
-constexpr uint16_t radioSpeed = 500;
+constexpr uint16_t radioSpeed = 2000;
 constexpr uint16_t readRadioInterval = 5000;
-constexpr uint16_t readRadioTimeout = 200;
+constexpr uint16_t readRadioTimeout = 500;
 
 uint32_t lastReadRadioMillis = 0;
 
@@ -29,6 +29,7 @@ void readRadio() {
 
 	lastReadRadioMillis = millis();
 
+	stopAcousticSignals();
 	readRadioMessages();
 }
 
